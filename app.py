@@ -160,8 +160,8 @@ def event_handle(event,json_line):
           line_bot_api.reply_message(rtoken, replyObj)
         else :
           headers = request.headers
-          json_headers = ({​k:v for k, v in headers.items()}​)
-          json_headers.update({​'Host':'bots.dialogflow.com'}​)
+          json_headers = ({k:v for k, v in headers.items()})
+          json_headers.update({'Host':'bots.dialogflow.com'})
           url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/3a8aa6fa-4b6e-44cb-943e-83c1a102c9ea"
           requests.post(url,data=json_line, headers=json_headers)
     elif msgType == "image":
