@@ -159,7 +159,7 @@ def event_handle(event,json_line):
             replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
             line_bot_api.reply_message(rtoken, replyObj)
         elif msg == "วันนี้อากาศเป็นไงบ้าง" :
-            url = "https://thaiskyward.com/api"
+            url = "https://data.go.th/api/dataset/daily-observation"
             response = requests.get(url)
             response = response.json()
             replyObj = TextSendMessage(text=str(response))
