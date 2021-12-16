@@ -158,8 +158,8 @@ def event_handle(event,json_line):
         elif (msg == "อัลบั้มinto1สวยมากเลย") :
             replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
             line_bot_api.reply_message(rtoken, replyObj)
-        elif msg == "into1" :
-            url = "https://www.sanook.com/music/2433661/"
+        elif msg == "อากาศวันนี้เป็นไงบ้าง" :
+            url = "https://www.tmd.go.th/index.php"
             response = requests.get(url)
             response = response.json()
             replyObj = TextSendMessage(text=str(response))
