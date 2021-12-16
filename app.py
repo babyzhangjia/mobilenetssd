@@ -158,6 +158,12 @@ def event_handle(event,json_line):
         elif (msg == "อัลบั้มinto1สวยมากเลย") :
             replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
             line_bot_api.reply_message(rtoken, replyObj)
+        elif msg == "into1" :
+            url = "https://www.youtube.com/c/INTO1/featured"
+            response = requests.get(url)
+            response = response.json()
+            replyObj = TextSendMessage(text=str(response))
+            line_bot_api.reply_message(rtoken, replyObj)
         else :
             headers = request.headers
             json_headers = ({k:v for k, v in headers.items()})
