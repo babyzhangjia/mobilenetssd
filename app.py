@@ -150,20 +150,20 @@ def event_handle(event,json_line):
     if msgType == "text":
         msg = str(event["message"]["text"])
         if (msg == "หนีห่าวน้องเจ้บ") :
-          replyObj = TextSendMessage(text="หนีห่าวค้าบ")
-          line_bot_api.reply_message(rtoken, replyObj)
+            replyObj = TextSendMessage(text="หนีห่าวค้าบ")
+            line_bot_api.reply_message(rtoken, replyObj)
         elif (msg == "กินข้าวยังคะ") :
-          replyObj = TextSendMessage(text="อิ่มจนพุงจะแตกแล้ว")
-          line_bot_api.reply_message(rtoken, replyObj)
+            replyObj = TextSendMessage(text="อิ่มจนพุงจะแตกแล้ว")
+            line_bot_api.reply_message(rtoken, replyObj)
         elif (msg == "อัลบั้มinto1สวยมากเลย") :
-          replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
-          line_bot_api.reply_message(rtoken, replyObj)
+            replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
+            line_bot_api.reply_message(rtoken, replyObj)
         else :
-          headers = request.headers
-          json_headers = ({k:v for k, v in headers.items()})
-          json_headers.update({'Host':'bots.dialogflow.com'})
-          url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/3a8aa6fa-4b6e-44cb-943e-83c1a102c9ea"
-          requests.post(url,data=json_line, headers=json_headers)
+            headers = request.headers
+            json_headers = ({k:v for k, v in headers.items()})
+            json_headers.update({'Host':'bots.dialogflow.com'})
+            url = "https://dialogflow.cloud.google.com/v1/integrations/line/webhook/3a8aa6fa-4b6e-44cb-943e-83c1a102c9ea"
+            requests.post(url,data=json_line, headers=json_headers)
     elif msgType == "image":
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
