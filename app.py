@@ -158,8 +158,8 @@ def event_handle(event,json_line):
         elif (msg == "อัลบั้มinto1สวยมากเลย") :
             replyObj = TextSendMessage(text="ยังไม่ได้ออก!")
             line_bot_api.reply_message(rtoken, replyObj)
-        elif msg == "วันนี้อากาศเป็นไงบ้าง" :
-            url = "https://th.freemeteo.com/weather/api/daily-forecast/today/?gid=1283728&language=thai&country=nepal"
+        elif msg == "covid" :
+            url = "https://covid19.ddc.moph.go.th/api/Cases/today-cases-all"
             response = requests.get(url)
             response = response.json()
             replyObj = TextSendMessage(text=str(response))
